@@ -11,20 +11,22 @@
 import * as React from "react";
 import * as p from "@plasmicapp/react-web";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts
 } from "@plasmicapp/react-web";
-import Avatar from "../../Avatar"; // plasmic-import: gM35gl7eyM/component
+import UploadAvatar from "../../UploadAvatar"; // plasmic-import: TSh3EdI_wt/component
 import TextInput from "../../TextInput"; // plasmic-import: 6jNi7LUNkWm/component
 import Button from "../../Button"; // plasmic-import: xYVXj1SpLX8/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_plasmic_whats_app_clone.module.css"; // plasmic-import: kzkatsDCvzPQVqDSnS1EKs/projectcss
 import sty from "./PlasmicUserProfile.module.css"; // plasmic-import: 3EZolvVuQD/css
+import SpinnerIcon from "./icons/PlasmicIcon__Spinner"; // plasmic-import: bYPm1zrvu/icon
 
-export const PlasmicUserProfile__VariantProps = new Array();
+export const PlasmicUserProfile__VariantProps = new Array("isError");
 
-export const PlasmicUserProfile__ArgProps = new Array();
+export const PlasmicUserProfile__ArgProps = new Array("errorMessage");
 
 function PlasmicUserProfile__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
@@ -57,17 +59,31 @@ function PlasmicUserProfile__RenderFunc(props) {
         {"User Profile"}
       </h3>
 
-      <Avatar
-        data-plasmic-name={"avatar"}
-        data-plasmic-override={overrides.avatar}
-        className={classNames("__wab_instance", sty.avatar)}
-        fullWidth={true}
+      <UploadAvatar
+        data-plasmic-name={"uploadAvatar"}
+        data-plasmic-override={overrides.uploadAvatar}
+        className={classNames("__wab_instance", sty.uploadAvatar)}
       />
+
+      {true ? (
+        <SpinnerIcon
+          data-plasmic-name={"svg"}
+          data-plasmic-override={overrides.svg}
+          className={classNames(projectcss.all, sty.svg)}
+          role={"img"}
+        />
+      ) : null}
 
       <TextInput
         data-plasmic-name={"firstNameInput"}
         data-plasmic-override={overrides.firstNameInput}
-        className={classNames("__wab_instance", sty.firstNameInput)}
+        className={classNames("__wab_instance", sty.firstNameInput, {
+          [sty.firstNameInputisError]: hasVariant(
+            variants,
+            "isError",
+            "isError"
+          )
+        })}
         placeholder={"First Name"}
       />
 
@@ -79,24 +95,68 @@ function PlasmicUserProfile__RenderFunc(props) {
       />
 
       <Button
-        data-plasmic-name={"button"}
-        data-plasmic-override={overrides.button}
-        className={classNames("__wab_instance", sty.button)}
+        data-plasmic-name={"updateProfileButton"}
+        data-plasmic-override={overrides.updateProfileButton}
+        className={classNames("__wab_instance", sty.updateProfileButton)}
         color={"green"}
       >
         {"Update Profile"}
       </Button>
+
+      {(hasVariant(variants, "isError", "isError") ? true : true) ? (
+        <div
+          className={classNames(projectcss.all, sty.freeBox__hzkFy, {
+            [sty.freeBoxisError__hzkFyficjK]: hasVariant(
+              variants,
+              "isError",
+              "isError"
+            )
+          })}
+        >
+          <div
+            className={classNames(projectcss.all, sty.freeBox__v5Cln, {
+              [sty.freeBoxisError__v5ClNficjK]: hasVariant(
+                variants,
+                "isError",
+                "isError"
+              )
+            })}
+          >
+            {p.renderPlasmicSlot({
+              defaultContents: "Upload Error!",
+              value: args.errorMessage,
+              className: classNames(sty.slotTargetErrorMessage, {
+                [sty.slotTargetErrorMessageisError]: hasVariant(
+                  variants,
+                  "isError",
+                  "isError"
+                )
+              })
+            })}
+          </div>
+        </div>
+      ) : null}
     </p.Stack>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h3", "avatar", "firstNameInput", "lastNameInput", "button"],
+  root: [
+    "root",
+    "h3",
+    "uploadAvatar",
+    "svg",
+    "firstNameInput",
+    "lastNameInput",
+    "updateProfileButton"
+  ],
+
   h3: ["h3"],
-  avatar: ["avatar"],
+  uploadAvatar: ["uploadAvatar"],
+  svg: ["svg"],
   firstNameInput: ["firstNameInput"],
   lastNameInput: ["lastNameInput"],
-  button: ["button"]
+  updateProfileButton: ["updateProfileButton"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -129,10 +189,11 @@ export const PlasmicUserProfile = Object.assign(
   {
     // Helper components rendering sub-elements
     h3: makeNodeComponent("h3"),
-    avatar: makeNodeComponent("avatar"),
+    uploadAvatar: makeNodeComponent("uploadAvatar"),
+    svg: makeNodeComponent("svg"),
     firstNameInput: makeNodeComponent("firstNameInput"),
     lastNameInput: makeNodeComponent("lastNameInput"),
-    button: makeNodeComponent("button"),
+    updateProfileButton: makeNodeComponent("updateProfileButton"),
     // Metadata about props expected for PlasmicUserProfile
     internalVariantProps: PlasmicUserProfile__VariantProps,
     internalArgProps: PlasmicUserProfile__ArgProps

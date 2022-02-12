@@ -7,6 +7,7 @@
   width: 60px;
   height: 60px;
   max-width: 100%;
+  background: #edeaea;
   border-radius: 50%;
 }
 .rootisEmpty {

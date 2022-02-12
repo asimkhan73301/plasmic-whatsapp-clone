@@ -54,8 +54,10 @@ function PlasmicSidebar__RenderFunc(props) {
         {true ? (
           <p.Stack
             as={"div"}
+            data-plasmic-name={"userProfileWrapper"}
+            data-plasmic-override={overrides.userProfileWrapper}
             hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__ouqSp)}
+            className={classNames(projectcss.all, sty.userProfileWrapper)}
           >
             <Avatar
               data-plasmic-name={"userAvatar"}
@@ -79,7 +81,11 @@ function PlasmicSidebar__RenderFunc(props) {
           </p.Stack>
         ) : null}
 
-        <div className={classNames(projectcss.all, sty.freeBox__dJFmr)}>
+        <div
+          data-plasmic-name={"freeBox"}
+          data-plasmic-override={overrides.freeBox}
+          className={classNames(projectcss.all, sty.freeBox)}
+        >
           <LogoutSvgrepoComsvgIcon
             data-plasmic-name={"logoutIcon"}
             data-plasmic-override={overrides.logoutIcon}
@@ -142,8 +148,10 @@ const PlasmicDescendants = {
   root: [
     "root",
     "header",
+    "userProfileWrapper",
     "userAvatar",
     "usernameWrapper",
+    "freeBox",
     "logoutIcon",
     "searchBar",
     "textInput",
@@ -154,9 +162,19 @@ const PlasmicDescendants = {
     "chatList"
   ],
 
-  header: ["header", "userAvatar", "usernameWrapper", "logoutIcon"],
+  header: [
+    "header",
+    "userProfileWrapper",
+    "userAvatar",
+    "usernameWrapper",
+    "freeBox",
+    "logoutIcon"
+  ],
+
+  userProfileWrapper: ["userProfileWrapper", "userAvatar", "usernameWrapper"],
   userAvatar: ["userAvatar"],
   usernameWrapper: ["usernameWrapper"],
+  freeBox: ["freeBox", "logoutIcon"],
   logoutIcon: ["logoutIcon"],
   searchBar: ["searchBar", "textInput", "textbox", "svg"],
   textInput: ["textInput", "textbox", "svg"],
@@ -196,8 +214,10 @@ export const PlasmicSidebar = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    userProfileWrapper: makeNodeComponent("userProfileWrapper"),
     userAvatar: makeNodeComponent("userAvatar"),
     usernameWrapper: makeNodeComponent("usernameWrapper"),
+    freeBox: makeNodeComponent("freeBox"),
     logoutIcon: makeNodeComponent("logoutIcon"),
     searchBar: makeNodeComponent("searchBar"),
     textInput: makeNodeComponent("textInput"),

@@ -4,7 +4,6 @@ import { Auth } from '@supabase/ui';
 import { PlasmicRootProvider } from "@plasmicapp/react-web";
 import { supabase } from '../lib/supabase';
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -36,7 +35,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <PlasmicRootProvider>
       <Auth.UserContextProvider supabaseClient={supabase}>
-       <Component {...pageProps} />
+      <Component {...pageProps} />
       </Auth.UserContextProvider>
     </PlasmicRootProvider>
   );

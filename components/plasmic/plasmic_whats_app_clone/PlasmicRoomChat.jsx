@@ -32,6 +32,12 @@ function PlasmicRoomChat__RenderFunc(props) {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
+        <title key="title">{"Plasmic WhatsApp Clone"}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={"Plasmic WhatsApp Clone"}
+        />
       </Head>
 
       <style>{`

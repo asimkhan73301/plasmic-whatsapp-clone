@@ -224,6 +224,19 @@
           "cssFilePath": "plasmic/plasmic_whats_app_clone/PlasmicHome.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "TSh3EdI_wt",
+          "name": "UploadAvatar",
+          "type": "managed",
+          "projectId": "kzkatsDCvzPQVqDSnS1EKs",
+          "renderModuleFilePath": "plasmic/plasmic_whats_app_clone/PlasmicUploadAvatar.jsx",
+          "importSpec": {
+            "modulePath": "UploadAvatar.jsx"
+          },
+          "cssFilePath": "plasmic/plasmic_whats_app_clone/PlasmicUploadAvatar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
