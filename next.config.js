@@ -1,3 +1,9 @@
+
 module.exports = {
-  reactStrictMode: true,
-}
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  trailingSlash: true,
+  // Your NextJS config.
+};
+    

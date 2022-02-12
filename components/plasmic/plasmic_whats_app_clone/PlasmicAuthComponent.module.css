@@ -1,0 +1,203 @@
+.root {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  width: 480px;
+  height: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: calc(0px - 16px);
+  height: calc(100% + 16px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 16px;
+}
+.h3 {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+  color: #30a46c;
+}
+.errorWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-height: 24px;
+  min-width: 0;
+}
+.errorWrapperisError {
+  display: flex;
+}
+.freeBox__g1KtC {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  flex-direction: row;
+  min-width: 0;
+  display: none;
+}
+.freeBoxisError__g1KtC75NMg {
+  display: flex;
+}
+.slotTargetErrorMessage {
+  color: #bf4444;
+}
+.fields {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.fields > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  margin-top: calc(0px - 16px);
+  height: calc(100% + 16px);
+}
+.fields > :global(.__wab_flex-container) > *,
+.fields > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.fields > :global(.__wab_flex-container) > picture > img,
+.fields
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 16px;
+}
+.emailInput:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__ywjhc {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__piOgL {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.passwordInput:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg___4A97O {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__v1Cmk {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.actions {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.submitButton:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.submitButtonisLoading:global(.__wab_instance) {
+  display: none;
+}
+.svg__opcCc {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__uGlI {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 48px;
+  height: 48px;
+  color: #30a46c;
+  flex-shrink: 0;
+  display: none;
+}
+.svgisLoading {
+  display: block;
+}
+.freeBox__xXhEh {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.text__yLk0E {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  text-align: center;
+  min-width: 0;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__gxWog {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.text__ktHd {
+  color: #30a46c;
+}
+.svg__wLfbB {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}

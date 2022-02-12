@@ -1,0 +1,89 @@
+.root {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  width: 480px;
+  height: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(0px - 24px);
+  height: calc(100% + 24px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 24px;
+}
+.h3 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  text-align: center;
+  color: #30a46c;
+  min-width: 0;
+}
+.avatar:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+.firstNameInput:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__osabd {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__olLdh {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.lastNameInput:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__gjJfo {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg___5WUyI {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.svg__dnHe {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg___6OPx1 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}

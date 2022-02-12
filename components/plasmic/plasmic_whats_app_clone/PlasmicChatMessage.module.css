@@ -1,0 +1,99 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  background: none;
+  min-width: 0;
+  border-radius: 8px;
+  padding: 8px;
+}
+.rootisSend {
+  align-items: center;
+  justify-content: flex-end;
+}
+.freeBox__e9KDv {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 8px;
+}
+.freeBoxisSend__e9KDvj3Pkn {
+  background: #def2d7;
+  align-items: center;
+  justify-content: flex-end;
+  width: auto;
+}
+.text {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  left: 7px;
+  top: -24px;
+  z-index: 1;
+  white-space: pre;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  min-width: 0;
+}
+.textisSend {
+  width: auto;
+  left: auto;
+  right: 10px;
+}
+.freeBox__fSykl {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  min-width: 0;
+}
+.freeBoxisSend__fSyklj3Pkn {
+  align-items: center;
+  justify-content: flex-end;
+  width: auto;
+}
+.freeBox__fQwB0 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  padding: 8px;
+}
+.freeBoxisSend__fQwB0J3Pkn {
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+}
+.freeBox___0AjBd {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+}
+.slotTargetCreatedAt {
+  font-size: 14px;
+  font-weight: 300;
+  color: #aaaaaa;
+}

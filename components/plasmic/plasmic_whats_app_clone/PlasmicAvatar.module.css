@@ -1,0 +1,92 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  max-width: 100%;
+  border-radius: 50%;
+}
+.rootisEmpty {
+  align-items: center;
+  justify-content: center;
+  background: #dddddd;
+  display: flex;
+  border-radius: 50%;
+}
+.rootcolor__1 {
+  background: #ec9e9e;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.rootcolor__2 {
+  background: #87f2b8;
+}
+.rootcolor__3 {
+  background: #81dbf2;
+}
+.rootfullWidth {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.img {
+  object-fit: cover;
+  max-width: 100%;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > .__wab_img-spacer > img {
+  object-fit: cover;
+}
+.imgisEmpty {
+  display: none !important;
+}
+.imgcolor__1 {
+  display: none !important;
+}
+.imgcolor__2 {
+  display: none !important;
+}
+.imgcolor__3 {
+  display: none !important;
+}
+.imgfullWidth {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.freeBox {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+  flex-direction: row;
+  display: none;
+}
+.freeBoxisEmpty {
+  display: flex;
+}
+.freeBoxcolor__1 {
+  display: flex;
+}
+.freeBoxcolor__2 {
+  display: flex;
+}
+.freeBoxcolor__3 {
+  display: flex;
+}
+.slotTargetPrefixText {
+  font-size: 32px;
+  font-weight: 200;
+}
