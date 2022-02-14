@@ -181,6 +181,7 @@
   position: relative;
   object-fit: cover;
   max-width: 100%;
+  cursor: pointer;
 }
 .sendButton > picture > img {
   object-fit: cover;

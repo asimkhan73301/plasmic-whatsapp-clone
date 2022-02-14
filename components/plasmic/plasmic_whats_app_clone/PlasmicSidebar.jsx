@@ -101,9 +101,9 @@ function PlasmicSidebar__RenderFunc(props) {
         className={classNames(projectcss.all, sty.searchBar)}
       >
         <TextInput
-          data-plasmic-name={"textInput"}
-          data-plasmic-override={overrides.textInput}
-          className={classNames("__wab_instance", sty.textInput)}
+          data-plasmic-name={"searchRoomInput"}
+          data-plasmic-override={overrides.searchRoomInput}
+          className={classNames("__wab_instance", sty.searchRoomInput)}
           placeholder={"Search Room by Name..."}
           showStartIcon={true}
           startIcon={
@@ -154,8 +154,7 @@ const PlasmicDescendants = {
     "freeBox",
     "logoutIcon",
     "searchBar",
-    "textInput",
-    "textbox",
+    "searchRoomInput",
     "svg",
     "addNewChatWrapper",
     "text",
@@ -176,8 +175,8 @@ const PlasmicDescendants = {
   usernameWrapper: ["usernameWrapper"],
   freeBox: ["freeBox", "logoutIcon"],
   logoutIcon: ["logoutIcon"],
-  searchBar: ["searchBar", "textInput", "textbox", "svg"],
-  textInput: ["textInput", "textbox", "svg"],
+  searchBar: ["searchBar", "searchRoomInput", "svg"],
+  searchRoomInput: ["searchRoomInput", "svg"],
   svg: ["svg"],
   addNewChatWrapper: ["addNewChatWrapper", "text"],
   text: ["text"],
@@ -220,7 +219,7 @@ export const PlasmicSidebar = Object.assign(
     freeBox: makeNodeComponent("freeBox"),
     logoutIcon: makeNodeComponent("logoutIcon"),
     searchBar: makeNodeComponent("searchBar"),
-    textInput: makeNodeComponent("textInput"),
+    searchRoomInput: makeNodeComponent("searchRoomInput"),
     svg: makeNodeComponent("svg"),
     addNewChatWrapper: makeNodeComponent("addNewChatWrapper"),
     text: makeNodeComponent("text"),

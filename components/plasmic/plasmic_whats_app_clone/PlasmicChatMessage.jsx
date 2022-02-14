@@ -16,22 +16,30 @@ import {
   createPlasmicElementProxy,
   deriveRenderOpts
 } from "@plasmicapp/react-web";
+import Avatar from "../../Avatar"; // plasmic-import: gM35gl7eyM/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_plasmic_whats_app_clone.module.css"; // plasmic-import: kzkatsDCvzPQVqDSnS1EKs/projectcss
 import sty from "./PlasmicChatMessage.module.css"; // plasmic-import: _Bch9VQnC0/css
+import TimeSvgrepoComsvgIcon from "./icons/PlasmicIcon__TimeSvgrepoComsvg"; // plasmic-import: jJx-M8BeGZ/icon
 
 export const PlasmicChatMessage__VariantProps = new Array("isSend");
 
-export const PlasmicChatMessage__ArgProps = new Array("message", "createdAt");
+export const PlasmicChatMessage__ArgProps = new Array(
+  "message",
+  "createdAt",
+  "username"
+);
 
 function PlasmicChatMessage__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
   return (
-    <div
+    <p.Stack
+      as={"div"}
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
+      hasGap={true}
       className={classNames(
         projectcss.all,
         projectcss.root_reset,
@@ -41,6 +49,13 @@ function PlasmicChatMessage__RenderFunc(props) {
         { [sty.rootisSend]: hasVariant(variants, "isSend", "isSend") }
       )}
     >
+      <Avatar
+        data-plasmic-name={"avatar"}
+        data-plasmic-override={overrides.avatar}
+        className={classNames("__wab_instance", sty.avatar)}
+        fullWidth={true}
+      />
+
       {true ? (
         <div
           className={classNames(projectcss.all, sty.freeBox__e9KDv, {
@@ -52,16 +67,25 @@ function PlasmicChatMessage__RenderFunc(props) {
           })}
         >
           <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text,
-              { [sty.textisSend]: hasVariant(variants, "isSend", "isSend") }
-            )}
+            className={classNames(projectcss.all, sty.freeBox__a9XKn, {
+              [sty.freeBoxisSend__a9XKnj3Pkn]: hasVariant(
+                variants,
+                "isSend",
+                "isSend"
+              )
+            })}
           >
-            {"username"}
+            {p.renderPlasmicSlot({
+              defaultContents: "username",
+              value: args.username,
+              className: classNames(sty.slotTargetUsername, {
+                [sty.slotTargetUsernameisSend]: hasVariant(
+                  variants,
+                  "isSend",
+                  "isSend"
+                )
+              })
+            })}
           </div>
 
           <div
@@ -74,9 +98,15 @@ function PlasmicChatMessage__RenderFunc(props) {
             })}
           >
             {p.renderPlasmicSlot({
-              defaultContents:
-                "Hello There, blah blah blah. I hope you are doing great",
-              value: args.message
+              defaultContents: "First Commit",
+              value: args.message,
+              className: classNames(sty.slotTargetMessage, {
+                [sty.slotTargetMessageisSend]: hasVariant(
+                  variants,
+                  "isSend",
+                  "isSend"
+                )
+              })
             })}
 
             <div
@@ -88,24 +118,52 @@ function PlasmicChatMessage__RenderFunc(props) {
                 )
               })}
             >
-              <div className={classNames(projectcss.all, sty.freeBox___0AjBd)}>
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox___0AjBd, {
+                  [sty.freeBoxisSend___0AjBdj3Pkn]: hasVariant(
+                    variants,
+                    "isSend",
+                    "isSend"
+                  )
+                })}
+              >
                 {p.renderPlasmicSlot({
                   defaultContents: "Time",
                   value: args.createdAt,
-                  className: classNames(sty.slotTargetCreatedAt)
+                  className: classNames(sty.slotTargetCreatedAt, {
+                    [sty.slotTargetCreatedAtisSend]: hasVariant(
+                      variants,
+                      "isSend",
+                      "isSend"
+                    )
+                  })
                 })}
-              </div>
+
+                {(hasVariant(variants, "isSend", "isSend") ? true : true) ? (
+                  <TimeSvgrepoComsvgIcon
+                    data-plasmic-name={"svg"}
+                    data-plasmic-override={overrides.svg}
+                    className={classNames(projectcss.all, sty.svg, {
+                      [sty.svgisSend]: hasVariant(variants, "isSend", "isSend")
+                    })}
+                    role={"img"}
+                  />
+                ) : null}
+              </p.Stack>
             </div>
           </div>
         </div>
       ) : null}
-    </div>
+    </p.Stack>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text"],
-  text: ["text"]
+  root: ["root", "avatar", "svg"],
+  avatar: ["avatar"],
+  svg: ["svg"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -137,7 +195,8 @@ export const PlasmicChatMessage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    text: makeNodeComponent("text"),
+    avatar: makeNodeComponent("avatar"),
+    svg: makeNodeComponent("svg"),
     // Metadata about props expected for PlasmicChatMessage
     internalVariantProps: PlasmicChatMessage__VariantProps,
     internalArgProps: PlasmicChatMessage__ArgProps

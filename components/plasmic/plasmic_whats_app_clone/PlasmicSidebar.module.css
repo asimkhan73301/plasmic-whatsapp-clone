@@ -91,6 +91,7 @@
   font-weight: 300;
   color: #535353;
   user-select: none;
+  white-space: pre;
 }
 .freeBox {
   display: flex;
@@ -109,6 +110,7 @@
   max-width: 100%;
   width: 18px;
   height: 18px;
+  cursor: pointer;
   flex-shrink: 0;
 }
 .searchBar {
@@ -123,7 +125,7 @@
   min-width: 0;
   padding: 8px;
 }
-.textInput:global(.__wab_instance) {
+.searchRoomInput:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }

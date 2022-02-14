@@ -3,24 +3,22 @@ import * as React from "react";
 import { useGetUserProfile, useUpdateUserProfile } from "../lib/supabase/profiles";
 
 import { PlasmicUserProfile } from "./plasmic/plasmic_whats_app_clone/PlasmicUserProfile";
+import { supabase } from "../lib/supabase";
 import { useRouter } from "next/router";
 
 function UserProfile_({...props}, ref) {
   const router = useRouter()
-  const [loading, setLoading] = React.useState(false)
   const [firstName, setFirstName] = React.useState("")
   const [lastName, setLastName] = React.useState("")
-  const {userProfile, loading: userProfileLoading} = useGetUserProfile()
-  const {mutate: updateUserProfile} = useUpdateUserProfile()
+
+  const user = supabase.auth.user()
+  const {data: userProfile, isLoading: userProfileLoading} = useGetUserProfile(user?.id)
+  const updateUserProfileMutation = useUpdateUserProfile()
 
   React.useEffect(() => {
     setFirstName(userProfile?.first_name)
     setLastName(userProfile?.last_name)
   }, [userProfile])
-
-  React.useEffect(() => {
-    setLoading(userProfileLoading)
-  }, [userProfileLoading])
 
   return (
     <PlasmicUserProfile
@@ -30,9 +28,9 @@ function UserProfile_({...props}, ref) {
       uploadAvatar={{
         url: userProfile?.avatar_url,
         onUpload: async (url) => {
-          await updateUserProfile({avatar_url: url})
+          await updateUserProfileMutation.mutateAsync({avatar_url: url})
         },
-        loading
+        loading: userProfileLoading || updateUserProfileMutation.isLoading
       }}
       firstNameInput={{
         value: firstName,
@@ -44,7 +42,7 @@ function UserProfile_({...props}, ref) {
       }}
       updateProfileButton={{
         onClick: async () => {
-          await updateUserProfile({first_name: firstName, last_name: lastName})
+          await updateUserProfileMutation.mutateAsync({first_name: firstName, last_name: lastName})
           router.replace("/")
         }
       }}

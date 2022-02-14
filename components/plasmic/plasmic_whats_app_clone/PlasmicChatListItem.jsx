@@ -9,7 +9,9 @@
 // Plasmic Project: kzkatsDCvzPQVqDSnS1EKs
 // Component: qgrz47A8td
 import * as React from "react";
+import * as p from "@plasmicapp/react-web";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts
@@ -19,9 +21,13 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_plasmic_whats_app_clone.module.css"; // plasmic-import: kzkatsDCvzPQVqDSnS1EKs/projectcss
 import sty from "./PlasmicChatListItem.module.css"; // plasmic-import: qgrz47A8td/css
 
-export const PlasmicChatListItem__VariantProps = new Array();
+export const PlasmicChatListItem__VariantProps = new Array("isSelected");
 
-export const PlasmicChatListItem__ArgProps = new Array();
+export const PlasmicChatListItem__ArgProps = new Array(
+  "roomName",
+  "lastMessageContent",
+  "avatarUrl"
+);
 
 function PlasmicChatListItem__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
@@ -36,7 +42,10 @@ function PlasmicChatListItem__RenderFunc(props) {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_tokens,
-        sty.root
+        sty.root,
+        {
+          [sty.rootisSelected]: hasVariant(variants, "isSelected", "isSelected")
+        }
       )}
     >
       <Avatar
@@ -45,31 +54,24 @@ function PlasmicChatListItem__RenderFunc(props) {
         className={classNames("__wab_instance", sty.avatar)}
         color={"_2"}
         isEmpty={true}
+        url={args.avatarUrl}
       />
 
-      <div
-        data-plasmic-name={"freeBox"}
-        data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox)}
-      >
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__y2WVl
-          )}
-        >
-          {"Username"}
+      <div className={classNames(projectcss.all, sty.freeBox___9WG)}>
+        <div className={classNames(projectcss.all, sty.freeBox__y2WVl)}>
+          {p.renderPlasmicSlot({
+            defaultContents: "Username",
+            value: args.roomName,
+            className: classNames(sty.slotTargetRoomName)
+          })}
         </div>
 
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__fsj8G
-          )}
-        >
-          {"Last message content. blah blah blah"}
+        <div className={classNames(projectcss.all, sty.freeBox__fsj8G)}>
+          {p.renderPlasmicSlot({
+            defaultContents: "Last message content. blah blah blah",
+            value: args.lastMessageContent,
+            className: classNames(sty.slotTargetLastMessageContent)
+          })}
         </div>
       </div>
     </div>
@@ -77,9 +79,8 @@ function PlasmicChatListItem__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "avatar", "freeBox"],
-  avatar: ["avatar"],
-  freeBox: ["freeBox"]
+  root: ["root", "avatar"],
+  avatar: ["avatar"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -112,7 +113,6 @@ export const PlasmicChatListItem = Object.assign(
   {
     // Helper components rendering sub-elements
     avatar: makeNodeComponent("avatar"),
-    freeBox: makeNodeComponent("freeBox"),
     // Metadata about props expected for PlasmicChatListItem
     internalVariantProps: PlasmicChatListItem__VariantProps,
     internalArgProps: PlasmicChatListItem__ArgProps

@@ -103,6 +103,16 @@ function PlasmicUserProfile__RenderFunc(props) {
         {"Update Profile"}
       </Button>
 
+      <Button
+        data-plasmic-name={"button"}
+        data-plasmic-override={overrides.button}
+        className={classNames("__wab_instance", sty.button)}
+        color={"link"}
+        link={"/"}
+      >
+        {"Let's Chat!!!!"}
+      </Button>
+
       {(hasVariant(variants, "isError", "isError") ? true : true) ? (
         <div
           className={classNames(projectcss.all, sty.freeBox__hzkFy, {
@@ -148,7 +158,8 @@ const PlasmicDescendants = {
     "svg",
     "firstNameInput",
     "lastNameInput",
-    "updateProfileButton"
+    "updateProfileButton",
+    "button"
   ],
 
   h3: ["h3"],
@@ -156,7 +167,8 @@ const PlasmicDescendants = {
   svg: ["svg"],
   firstNameInput: ["firstNameInput"],
   lastNameInput: ["lastNameInput"],
-  updateProfileButton: ["updateProfileButton"]
+  updateProfileButton: ["updateProfileButton"],
+  button: ["button"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -194,6 +206,7 @@ export const PlasmicUserProfile = Object.assign(
     firstNameInput: makeNodeComponent("firstNameInput"),
     lastNameInput: makeNodeComponent("lastNameInput"),
     updateProfileButton: makeNodeComponent("updateProfileButton"),
+    button: makeNodeComponent("button"),
     // Metadata about props expected for PlasmicUserProfile
     internalVariantProps: PlasmicUserProfile__VariantProps,
     internalArgProps: PlasmicUserProfile__ArgProps

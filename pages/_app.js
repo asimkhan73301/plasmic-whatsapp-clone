@@ -1,9 +1,21 @@
 import '../styles/globals.css'
 
+import { QueryClient, QueryClientProvider } from 'react-query';
+
 import { Auth } from '@supabase/ui';
 import { PlasmicRootProvider } from "@plasmicapp/react-web";
+import {RecoilRoot} from "recoil"
 import { supabase } from '../lib/supabase';
 import { useEffect } from 'react';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 0,
+      refetchOnWindowFocus: false,
+    }
+  }
+})
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -35,7 +47,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <PlasmicRootProvider>
       <Auth.UserContextProvider supabaseClient={supabase}>
-      <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <RecoilRoot>
+            <Component {...pageProps} />
+          </RecoilRoot>
+        </QueryClientProvider>
       </Auth.UserContextProvider>
     </PlasmicRootProvider>
   );

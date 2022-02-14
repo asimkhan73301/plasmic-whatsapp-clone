@@ -1,8 +1,6 @@
 .root {
-  display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  display: flex;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -12,9 +10,46 @@
   border-radius: 8px;
   padding: 8px;
 }
-.rootisSend {
+.root > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: flex-end;
+  min-width: 0;
+  margin-left: calc(0px - 16px);
+  width: calc(100% + 16px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-left: 16px;
+}
+.rootisSend {
+  flex-direction: row-reverse;
+}
+.rootisSend > :global(.__wab_flex-container) {
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.rootisSend > :global(.__wab_flex-container) > *,
+.rootisSend > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.rootisSend > :global(.__wab_flex-container) > picture > img,
+.rootisSend
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 0px;
+}
+.avatar:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 }
 .freeBox__e9KDv {
   display: flex;
@@ -35,7 +70,7 @@
   justify-content: flex-end;
   width: auto;
 }
-.text {
+.freeBox__a9XKn {
   position: absolute;
   width: 100%;
   height: auto;
@@ -43,16 +78,20 @@
   left: 7px;
   top: -24px;
   z-index: 1;
-  white-space: pre;
-  font-size: 14px;
-  font-weight: 600;
-  color: #000000;
+  display: flex;
+  flex-direction: row;
   min-width: 0;
 }
-.textisSend {
+.freeBoxisSend__a9XKnj3Pkn {
   width: auto;
   left: auto;
   right: 10px;
+}
+.slotTargetUsername {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  white-space: pre;
 }
 .freeBox__fSykl {
   display: flex;
@@ -63,9 +102,12 @@
   min-width: 0;
 }
 .freeBoxisSend__fSyklj3Pkn {
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: auto;
+}
+.slotTargetMessage {
+  font-size: 14px;
 }
 .freeBox__fQwB0 {
   display: flex;
@@ -85,15 +127,71 @@
   min-width: 0;
 }
 .freeBox___0AjBd {
+  flex-direction: row-reverse;
   position: relative;
   width: auto;
   height: auto;
   max-width: 800px;
   display: flex;
+}
+.freeBox___0AjBd > :global(.__wab_flex-container) {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: calc(0px - 4px);
+  width: calc(100% + 4px);
+}
+.freeBox___0AjBd > :global(.__wab_flex-container) > *,
+.freeBox___0AjBd > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox___0AjBd > :global(.__wab_flex-container) > picture > img,
+.freeBox___0AjBd
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 4px;
+}
+.freeBoxisSend___0AjBdj3Pkn {
   flex-direction: row;
 }
+.freeBoxisSend___0AjBdj3Pkn > :global(.__wab_flex-container) {
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.freeBoxisSend___0AjBdj3Pkn > :global(.__wab_flex-container) > *,
+.freeBoxisSend___0AjBdj3Pkn
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > *,
+.freeBoxisSend___0AjBdj3Pkn > :global(.__wab_flex-container) > picture > img,
+.freeBoxisSend___0AjBdj3Pkn
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+  margin-top: 0px;
+}
 .slotTargetCreatedAt {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
   color: #aaaaaa;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  color: #aaaaaa;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  display: block;
+}
+.svgisSend {
+  display: block;
 }

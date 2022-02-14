@@ -40,6 +40,9 @@
   position: relative;
   flex-shrink: 0;
 }
+.text {
+  white-space: pre;
+}
 .chat:global(.__wab_instance) {
   position: relative;
 }

@@ -8,16 +8,26 @@
   max-width: 100%;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
   min-width: 0;
   padding: 8px;
   border-bottom: 1px solid #f1f1f1;
+}
+.rootisSelected {
+  background: #e6e6e6;
+}
+.root:hover {
+  background: #f4f4f4;
 }
 .avatar:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   flex-shrink: 0;
 }
-.freeBox {
+.freeBox___9WG {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -29,21 +39,49 @@
   min-width: 0;
   padding: 8px;
 }
-.text__y2WVl {
+.freeBox__y2WVl {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
-  font-weight: 700;
+  display: flex;
+  flex-direction: row;
   min-width: 0;
 }
-.text__fsj8G {
+.slotTargetRoomName {
+  font-weight: 700;
+}
+.freeBox__fsj8G {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
-  white-space: pre;
-  text-overflow: ellipsis;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
   min-width: 0;
+}
+.slotTargetLastMessageContent {
+  white-space: pre;
+}
+.slotTargetLastMessageContent > .__wab_text,
+.slotTargetLastMessageContent > .__wab_slot-string-wrapper,
+.slotTargetLastMessageContent > .__wab_slot > .__wab_text,
+.slotTargetLastMessageContent > .__wab_slot > .__wab_slot-string-wrapper,
+.slotTargetLastMessageContent > .__wab_slot > .__wab_slot > .__wab_text,
+.slotTargetLastMessageContent
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot-string-wrapper,
+.slotTargetLastMessageContent
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_text,
+.slotTargetLastMessageContent
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot-string-wrapper {
+  text-overflow: ellipsis;
 }

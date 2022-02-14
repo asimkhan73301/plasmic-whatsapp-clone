@@ -274,6 +274,11 @@
           "id": "bYPm1zrvu",
           "name": "SpinnerIcon",
           "moduleFilePath": "plasmic/plasmic_whats_app_clone/icons/PlasmicIcon__Spinner.jsx"
+        },
+        {
+          "id": "jJx-M8BeGZ",
+          "name": "TimeSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/plasmic_whats_app_clone/icons/PlasmicIcon__TimeSvgrepoComsvg.jsx"
         }
       ],
       "images": [

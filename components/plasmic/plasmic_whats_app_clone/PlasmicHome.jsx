@@ -71,6 +71,19 @@ function PlasmicHome__RenderFunc(props) {
               data-plasmic-name={"sidebar"}
               data-plasmic-override={overrides.sidebar}
               className={classNames("__wab_instance", sty.sidebar)}
+              username={
+                <div
+                  data-plasmic-name={"text"}
+                  data-plasmic-override={overrides.text}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text
+                  )}
+                >
+                  {"John Doe"}
+                </div>
+              }
             />
 
             <Chat
@@ -87,9 +100,10 @@ function PlasmicHome__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "main", "sidebar", "chat"],
-  main: ["main", "sidebar", "chat"],
-  sidebar: ["sidebar"],
+  root: ["root", "main", "sidebar", "text", "chat"],
+  main: ["main", "sidebar", "text", "chat"],
+  sidebar: ["sidebar", "text"],
+  text: ["text"],
   chat: ["chat"]
 };
 
@@ -124,6 +138,7 @@ export const PlasmicHome = Object.assign(
     // Helper components rendering sub-elements
     main: makeNodeComponent("main"),
     sidebar: makeNodeComponent("sidebar"),
+    text: makeNodeComponent("text"),
     chat: makeNodeComponent("chat"),
     // Metadata about props expected for PlasmicHome
     internalVariantProps: PlasmicHome__VariantProps,
