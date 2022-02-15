@@ -12,6 +12,9 @@
   transition-property: all;
   transition-duration: 400ms;
   transition-timing-function: ease-in-out;
+  min-height: 80px;
+  max-height: 80px;
+  flex-shrink: 0;
   min-width: 0;
   padding: 8px;
   border-bottom: 1px solid #f1f1f1;

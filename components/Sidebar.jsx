@@ -15,7 +15,7 @@ function Sidebar_({user, roomId, ...props}, ref) {
   const searchQueryDebounced = useDebounce(searchQuery, 500)
 
   const {data: userProfile} = useGetUserProfile(user?.id)
-  const {data: chatRoomsList, isLoading: chatRoomsListLoading} = useGetChatRooms({searchQuery: searchQueryDebounced})
+  const {data: chatRoomsList, refetch: fetchChatRoomsList, isLoading: chatRoomsListLoading} = useGetChatRooms({searchQuery: searchQueryDebounced})
   const createChatRoomMutation = useCreateChatRoom()
 
   let username = user?.email
@@ -48,11 +48,11 @@ function Sidebar_({user, roomId, ...props}, ref) {
         }
       }}
       addNewChatWrapper={{
-        onClick: () => {
+        onClick: async () => {
           const roomName = prompt("Please enter the new chat room name")
           if(!roomName) return
-
-          createChatRoomMutation.mutate({roomName})                    
+          await createChatRoomMutation.mutateAsync({roomName})
+          fetchChatRoomsList()                
         }
       }}
       chatList={{
