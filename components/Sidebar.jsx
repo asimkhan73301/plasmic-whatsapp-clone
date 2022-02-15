@@ -38,8 +38,8 @@ function Sidebar_({user, roomId, ...props}, ref) {
         isEmpty: !userProfile?.avatar_url,
         url: userProfile?.avatar_url,
         prefixText: (
-          userProfile.first_name && userProfile.first_name[0].toUpperCase() ||
-          userProfile.last_name && userProfile.last_name[0].toUpperCase()
+          userProfile?.first_name && userProfile?.first_name[0].toUpperCase() ||
+          userProfile?.last_name && userProfile?.last_name[0].toUpperCase()
         )
       }}
       userProfileWrapper={{
