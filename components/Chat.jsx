@@ -15,7 +15,7 @@ function Chat_({roomId, ...props}, ref) {
   const scrollRef = React.useRef()
   const [newMessage, setNewMessage] = React.useState("")
   const {data: roomDetails} = useGetChatRoomDetails({roomId})
-  const {data: messages, refetch: fetchMessages} = useGetMessagesByRoom({roomId})
+  const {data: messages, isLoading: messagesLoading, refetch: fetchMessages} = useGetMessagesByRoom({roomId})
   const createChatMessageMutation = useCreateChatMessage({roomId})
   const user = supabase.auth.user()
 
@@ -25,7 +25,7 @@ function Chat_({roomId, ...props}, ref) {
     setTimeout(() => {
       scrollRef.current.scrollIntoView({behavior: "smooth"})
     }, 300)
-  }, [messages?.length])
+  }, [messages?.length, messagesLoading])
 
   React.useEffect(() => {
     const subscription = supabase.from("messages").on("INSERT", (payload) => {
