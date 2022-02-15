@@ -5,11 +5,8 @@ import { useCreateChatMessage, useGetMessagesByRoom } from "../lib/supabase/mess
 
 import ChatMessage from "./ChatMessage";
 import { PlasmicChat } from "./plasmic/plasmic_whats_app_clone/PlasmicChat";
-import { getUserProfile } from "../lib/supabase/profiles";
 import { supabase } from "../lib/supabase";
 import { useGetChatRoomDetails } from "../lib/supabase/room";
-
-const UserProfileCache = {}
 
 function Chat_({roomId, ...props}, ref) {
   const scrollRef = React.useRef()
